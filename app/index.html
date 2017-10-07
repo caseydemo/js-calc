@@ -16,7 +16,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 
@@ -24,156 +24,144 @@
 
 <body class="container">
 
-<div class="calculator">
-  <h3>JavaScript Calculator</h3>
 
-  <!-- solar panel -->
-  <div class="row">
-    <div class="col-xs-12">
-      <button id="solarPanel" class="btn btn-warning calc-btn">Solar Panel!</button>
-    </div>
-  </div>
+<div class="panel panel-default" id="calculator-background">
 
-  <!-- display -->
-  <div class="row">
-    <div class="col-xs-12">
-      <p id="display" class="calc-display"></p>
-    </div>
-  </div>
 
-  <!-- all clear key -->
-  <div class="row">
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key allclear">AC</button>
+  <div class="calculator">
+    <h3>JavaScript Calculator</h3>
+
+    
+
+    <!-- display -->
+    <div class="row">
+      <div class="col-xs-12">
+        <p id="display" class="calc-display"></p>
+      </div>
     </div>
 
-    <!-- clear key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key clear">C</button>
+    <!-- all clear key -->
+    <div class="row">
+      <div class="col-xs-6">
+        <button class="btn btn-default calc-btn key allclear">AC</button>
+      </div>
+
+      
+
+      <!-- "plus/minus key" -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key sign">+/-</button>
+      </div>
+
+      <!-- division key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key operator">/</button>
+      </div>
     </div>
 
-    <!-- "plus/minus key" -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key">+/-</button>
+    <!-- new row -->
+    <div class="row">
+
+      <!-- new column -->
+      <div class="col-xs-3">
+
+        <!-- "7" key -->
+        <button class="btn btn-default calc-btn key numeric">7</button>
+      </div>
+
+      <!-- "8" key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key numeric">8</button>
+      </div>
+
+      <!-- "9" key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key numeric">9</button>
+      </div>
+
+      <!-- multiplication key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key operator">x</button>
+      </div>
     </div>
 
-    <!-- division key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key operator">/</button>
-    </div>
-  </div>
+    <!-- new row -->
+    <div class="row">
 
-  <!-- new row -->
-  <div class="row">
+      <!-- new column -->
+      <div class="col-xs-3">
 
-    <!-- new column -->
-    <div class="col-xs-3">
+        <!-- "4" key -->
+        <button class="btn btn-default calc-btn key numeric">4</button>
+      </div>
 
-      <!-- "7" key -->
-      <button class="btn btn-default calc-btn key numeric">7</button>
-    </div>
+      <!-- "5" key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key numeric">5</button>      
+      </div>
 
-    <!-- "8" key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key numeric">8</button>
-    </div>
+      <!-- "6" key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key numeric">6</button>
+      </div>
 
-    <!-- "9" key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key numeric">9</button>
-    </div>
-
-    <!-- multiplication key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key operator">x</button>
-    </div>
-  </div>
-
-  <!-- new row -->
-  <div class="row">
-
-    <!-- new column -->
-    <div class="col-xs-3">
-
-      <!-- "4" key -->
-      <button class="btn btn-default calc-btn key numeric">4</button>
+      <!-- subtraction operator -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key operator">-</button>      
+      </div>
     </div>
 
-    <!-- "5" key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key numeric">5</button>      
+    <!-- new row -->
+    <div class="row">
+      <!-- new column -->
+      <div class="col-xs-3">
+
+        <!-- "1" key -->
+        <button class="btn btn-default calc-btn key numeric">1</button>            
+      </div>
+
+      <!-- "2" key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key numeric">2</button>            
+      </div>
+
+      <!-- "3" key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key numeric">3</button>            
+      </div>
+
+      <!-- addition operator key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key operator">+</button>            
+      </div>
     </div>
 
-    <!-- "6" key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key numeric">6</button>
-    </div>
+    <!-- new row -->
+    <div class="row">
 
-    <!-- subtraction operator -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key operator">-</button>      
-    </div>
-  </div>
+      <!-- new column -->
+      <div class="col-xs-6">
 
-  <!-- new row -->
-  <div class="row">
-    <!-- new column -->
-    <div class="col-xs-3">
+        <!-- "0" key -->
+        <button class="btn btn-default calc-btn key numeric">0</button>            
+      </div>
 
-      <!-- "1" key -->
-      <button class="btn btn-default calc-btn key numeric">1</button>            
-    </div>
+      <!-- "." decimal key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key decimal">.</button>            
+      </div>
 
-    <!-- "2" key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key numeric">2</button>            
-    </div>
+      <!-- "=" equals key -->
+      <div class="col-xs-3">
+        <button class="btn btn-default calc-btn key calculate">=</button>            
+      </div>
 
-    <!-- "3" key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key numeric">3</button>            
-    </div>
-
-    <!-- addition operator key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key operator">+</button>            
-    </div>
-  </div>
-
-  <!-- new row -->
-  <div class="row">
-
-    <!-- new column -->
-    <div class="col-xs-6">
-
-      <!-- "0" key -->
-      <button class="btn btn-default calc-btn key numeric">0</button>            
-    </div>
-
-    <!-- "." decimal key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key decimal">.</button>            
-    </div>
-
-    <!-- "=" equals key -->
-    <div class="col-xs-3">
-      <button class="btn btn-default calc-btn key calculate">=</button>            
     </div>
 
   </div>
-  
+
 </div>
 
-
-
-
-
-
-
-
-
-
-
-  <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@ var solarPanel = document.getElementById('solarPanel');
 var display = document.getElementById('display');
 var keys = document.getElementsByClassName('key');
 
-var value1;
+var value1; 
 var value2;
 var selectedOperator;
 var lastKeyPressed = '';
@@ -19,44 +19,86 @@ document.onreadystatechange = function() {
 };
 
 function ButtonLogic() {
+
+  console.log("value1: " + value1);
+
+  // this is the user's input
   var keyLabel = this.innerHTML;
+
+  /*
+     user selects a number - then the numeric function is called
+     "numeric" takes two parameters (keyLabel, lastKeyPressed)
+     and calls the properAppend function
+     keyLabel = number they pressed, lasKeyPressed = the button they pushed just before
+  */
   if (this.classList.contains('numeric')) {
     numeric(keyLabel, lastKeyPressed);
   }
+
+  // user selected "=", calls the calculate function
   else if (this.classList.contains('calculate')) {
     calculate();
   }
+
+
+  // user selected the "." decimal point, calls the decimal function
   else if (this.classList.contains('decimal')) {
     decimal(keyLabel, lastKeyPressed);
   }
+
+
+  // user selected one of the operator buttons "+, -, /, x", calls the operator function
   else if (this.classList.contains('operator')) {
     operator(keyLabel);
   }
+
+
+  // user selected all clear "AC", calls allClear function
   else if (this.classList.contains('allclear')) {
     allClear();
   }
+
+  // user selected the standard clear "C" button, calls clear function
   else if (this.classList.contains('clear')) {
     clear();
   }
+
+
+  // user selected the sign "+/-" button, which will call the sign function
   else if (this.classList.contains('sign')) {
-    sign(keyLabel);
+    processSignKey(lastKeyPressed);
   }
+
+  // after the function is called and the compiler returns to this function - it 
+  // assigns the key they just pressed (keyLabel) to the variable lastKeyPressed
+  // to prepare for the next key press
   lastKeyPressed = keyLabel;
 }
 
+// this function processes the sign function
+// changes value of keyLabel from pos to neg, or neg to pos respectively
 function processSignKey() {
-  
-  // conditions
-  // logic
 
-  var temp = sign(123);
+  // if last key pressed is NaN
+  // ignore the sign key
+  // else - send it to the sign function
+  if(lastKeyPressed === NaN){
+    alert('stop pressing that over and over');
+  }
+  else{
+    sign();
+  }
+
 
 }
 
-function sign(num) {
-  var temp = Number(num)*-1;
+function sign() {
+  var temp = Number(value1)*-1;
   console.log(temp);
   display.innerHTML = temp;
+  value1 = temp;
+  console.log("this is your new value1" + value1);
+
 }
 
 function operator(keyLabel) {
@@ -130,7 +172,7 @@ function calculate() {
       results = Number(value1) / Number(value2);
       break;
     default:
-      alert("What are you doing?!?!?");
+      alert("hey - cool it, man");
   }
   // store results of the calculation in value1
   value1 = results;
