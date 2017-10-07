@@ -39,7 +39,7 @@ function ButtonLogic() {
     clear();
   }
   else if (this.classList.contains('sign')) {
-    sign();
+    sign(keyLabel);
   }
   lastKeyPressed = keyLabel;
 }
@@ -56,7 +56,7 @@ function processSignKey() {
 function sign(num) {
   var temp = Number(num)*-1;
   console.log(temp);
-  return temp;
+  display.innerHTML = temp;
 }
 
 function operator(keyLabel) {
